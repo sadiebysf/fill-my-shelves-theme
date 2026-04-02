@@ -1,6 +1,642 @@
+{% doc %}
+  @prompt
+    barnes and noble style layout
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-bn-layout-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-bn-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-bn-header-{{ ai_gen_id }} {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .ai-bn-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-bn-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .ai-bn-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .ai-bn-featured-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border: 1px solid {{ block.settings.border_color }};
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-bn-featured-image-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ai-bn-featured-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-bn-featured-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-bn-featured-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-bn-featured-content-{{ ai_gen_id }} {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-bn-featured-title-{{ ai_gen_id }} {
+    font-size: 18px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+
+  .ai-bn-featured-price-{{ ai_gen_id }} {
+    font-size: 16px;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .ai-bn-featured-description-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex-grow: 1;
+  }
+
+  .ai-bn-featured-link-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid {{ block.settings.button_color }};
+  }
+
+  .ai-bn-featured-link-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+    border-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-bn-list-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-bn-item-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    background-color: {{ block.settings.card_background }};
+    border: 1px solid {{ block.settings.border_color }};
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  .ai-bn-item-{{ ai_gen_id }}:hover {
+    border-color: {{ block.settings.text_color }};
+  }
+
+  .ai-bn-item-image-{{ ai_gen_id }} {
+    width: 120px;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .ai-bn-item-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-bn-item-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-bn-item-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-bn-item-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ai-bn-item-title-{{ ai_gen_id }} {
+    font-size: 16px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 6px;
+    font-weight: 600;
+  }
+
+  .ai-bn-item-author-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.7;
+    margin-bottom: 8px;
+  }
+
+  .ai-bn-item-price-{{ ai_gen_id }} {
+    font-size: 15px;
+    color: {{ block.settings.text_color }};
+    font-weight: 500;
+  }
+
+  .ai-bn-bottom-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .ai-bn-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border: 1px solid {{ block.settings.border_color }};
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-bn-card-{{ ai_gen_id }}:hover {
+    border-color: {{ block.settings.text_color }};
+  }
+
+  .ai-bn-card-image-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+  }
+
+  .ai-bn-card-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-bn-card-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-bn-card-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-bn-card-content-{{ ai_gen_id }} {
+    padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-bn-card-title-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 6px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .ai-bn-card-author-{{ ai_gen_id }} {
+    font-size: 13px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.7;
+    margin-bottom: 8px;
+  }
+
+  .ai-bn-card-price-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+    font-weight: 500;
+    margin-top: auto;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-bn-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-bn-bottom-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-bn-layout-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-bn-item-{{ ai_gen_id }} {
+      grid-template-columns: 100px 1fr;
+      gap: 12px;
+      padding: 12px;
+    }
+
+    .ai-bn-item-image-{{ ai_gen_id }} {
+      width: 100px;
+    }
+
+    .ai-bn-bottom-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-bn-layout-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-bn-container-{{ ai_gen_id }}">
+    {% if block.settings.title != blank or block.settings.subtitle != blank %}
+      <div class="ai-bn-header-{{ ai_gen_id }}">
+        {% if block.settings.title != blank %}
+          <h2 class="ai-bn-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <p class="ai-bn-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-bn-grid-{{ ai_gen_id }}">
+      <div class="ai-bn-featured-{{ ai_gen_id }}">
+        <div class="ai-bn-featured-image-{{ ai_gen_id }}">
+          {% if block.settings.featured_product != blank and block.settings.featured_product.featured_image %}
+            <img
+              src="{{ block.settings.featured_product.featured_image | image_url: width: 600 }}"
+              alt="{{ block.settings.featured_product.featured_image.alt | escape }}"
+              loading="lazy"
+              width="600"
+              height="800"
+            >
+          {% else %}
+            <div class="ai-bn-featured-placeholder-{{ ai_gen_id }}">
+              {{ 'product-1' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="ai-bn-featured-content-{{ ai_gen_id }}">
+          {% if block.settings.featured_product != blank %}
+            <h3 class="ai-bn-featured-title-{{ ai_gen_id }}">{{ block.settings.featured_product.title }}</h3>
+            <div class="ai-bn-featured-price-{{ ai_gen_id }}">{{ block.settings.featured_product.price | money }}</div>
+            {% if block.settings.featured_product.description != blank %}
+              <div class="ai-bn-featured-description-{{ ai_gen_id }}">
+                {{ block.settings.featured_product.description | strip_html | truncate: 150 }}
+              </div>
+            {% endif %}
+            <a href="{{ block.settings.featured_product.url }}" class="ai-bn-featured-link-{{ ai_gen_id }}">
+              {{ block.settings.button_text }}
+            </a>
+          {% else %}
+            <h3 class="ai-bn-featured-title-{{ ai_gen_id }}">Featured product</h3>
+            <div class="ai-bn-featured-price-{{ ai_gen_id }}">$19.99</div>
+            <div class="ai-bn-featured-description-{{ ai_gen_id }}">
+              Select a featured product to showcase in this prominent position.
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="ai-bn-list-{{ ai_gen_id }}">
+        {% for i in (1..4) %}
+          {% liquid
+            assign product_key = 'list_product_' | append: i
+            assign product = block.settings[product_key]
+          %}
+          {% if product != blank %}
+            <a href="{{ product.url }}" class="ai-bn-item-{{ ai_gen_id }}">
+              <div class="ai-bn-item-image-{{ ai_gen_id }}">
+                {% if product.featured_image %}
+                  <img
+                    src="{{ product.featured_image | image_url: width: 240 }}"
+                    alt="{{ product.featured_image.alt | escape }}"
+                    loading="lazy"
+                    width="120"
+                    height="180"
+                  >
+                {% else %}
+                  <div class="ai-bn-item-placeholder-{{ ai_gen_id }}">
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="ai-bn-item-content-{{ ai_gen_id }}">
+                <h4 class="ai-bn-item-title-{{ ai_gen_id }}">{{ product.title }}</h4>
+                {% if product.vendor != blank %}
+                  <div class="ai-bn-item-author-{{ ai_gen_id }}">{{ product.vendor }}</div>
+                {% endif %}
+                <div class="ai-bn-item-price-{{ ai_gen_id }}">{{ product.price | money }}</div>
+              </div>
+            </a>
+          {% else %}
+            <div class="ai-bn-item-{{ ai_gen_id }}">
+              <div class="ai-bn-item-image-{{ ai_gen_id }}">
+                <div class="ai-bn-item-placeholder-{{ ai_gen_id }}">
+                  {{ 'product-1' | placeholder_svg_tag }}
+                </div>
+              </div>
+              <div class="ai-bn-item-content-{{ ai_gen_id }}">
+                <h4 class="ai-bn-item-title-{{ ai_gen_id }}">Product {{ i }}</h4>
+                <div class="ai-bn-item-author-{{ ai_gen_id }}">Author name</div>
+                <div class="ai-bn-item-price-{{ ai_gen_id }}">$19.99</div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="ai-bn-bottom-grid-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign product_key = 'grid_product_' | append: i
+          assign product = block.settings[product_key]
+        %}
+        {% if product != blank %}
+          <a href="{{ product.url }}" class="ai-bn-card-{{ ai_gen_id }}">
+            <div class="ai-bn-card-image-{{ ai_gen_id }}">
+              {% if product.featured_image %}
+                <img
+                  src="{{ product.featured_image | image_url: width: 400 }}"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  loading="lazy"
+                  width="300"
+                  height="450"
+                >
+              {% else %}
+                <div class="ai-bn-card-placeholder-{{ ai_gen_id }}">
+                  {{ 'product-1' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+            <div class="ai-bn-card-content-{{ ai_gen_id }}">
+              <h4 class="ai-bn-card-title-{{ ai_gen_id }}">{{ product.title }}</h4>
+              {% if product.vendor != blank %}
+                <div class="ai-bn-card-author-{{ ai_gen_id }}">{{ product.vendor }}</div>
+              {% endif %}
+              <div class="ai-bn-card-price-{{ ai_gen_id }}">{{ product.price | money }}</div>
+            </div>
+          </a>
+        {% else %}
+          <div class="ai-bn-card-{{ ai_gen_id }}">
+            <div class="ai-bn-card-image-{{ ai_gen_id }}">
+              <div class="ai-bn-card-placeholder-{{ ai_gen_id }}">
+                {{ 'product-1' | placeholder_svg_tag }}
+              </div>
+            </div>
+            <div class="ai-bn-card-content-{{ ai_gen_id }}">
+              <h4 class="ai-bn-card-title-{{ ai_gen_id }}">Product {{ i }}</h4>
+              <div class="ai-bn-card-author-{{ ai_gen_id }}">Author name</div>
+              <div class="ai-bn-card-price-{{ ai_gen_id }}">$19.99</div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Barnes & Noble layout",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "Featured collection"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Discover our curated selection"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Featured product"
+    },
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Featured product"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "header",
+      "content": "List products"
+    },
+    {
+      "type": "product",
+      "id": "list_product_1",
+      "label": "Product 1"
+    },
+    {
+      "type": "product",
+      "id": "list_product_2",
+      "label": "Product 2"
+    },
+    {
+      "type": "product",
+      "id": "list_product_3",
+      "label": "Product 3"
+    },
+    {
+      "type": "product",
+      "id": "list_product_4",
+      "label": "Product 4"
+    },
+    {
+      "type": "header",
+      "content": "Grid products"
+    },
+    {
+      "type": "product",
+      "id": "grid_product_1",
+      "label": "Product 1"
+    },
+    {
+      "type": "product",
+      "id": "grid_product_2",
+      "label": "Product 2"
+    },
+    {
+      "type": "product",
+      "id": "grid_product_3",
+      "label": "Product 3"
+    },
+    {
+      "type": "product",
+      "id": "grid_product_4",
+      "label": "Product 4"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#FAF7F2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#2C1810"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border",
+      "default": "#E5E5E5"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button background",
+      "default": "#2C1810"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover background",
+      "default": "#7C9A7E"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barnes & Noble layout"
+    }
+  ]
+}
 {% endschema %}
