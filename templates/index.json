@@ -1,0 +1,188 @@
+{
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "📚 The more you buy, the more you save — up to 25% off bulk orders!",
+        "color_scheme": "scheme-5"
+      }
+    },
+    "hero": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fill Your Shelves",
+            "heading_size": "h0"
+          }
+        },
+        "subheading": {
+          "type": "text",
+          "settings": {
+            "text": "The more you buy, the more you save"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "/collections/all",
+            "button_style_secondary_1": false
+          }
+        }
+      },
+      "block_order": ["heading", "subheading", "button"],
+      "settings": {
+        "image_overlay_opacity": 30,
+        "image_height": "large",
+        "adapt_height_first_image": false,
+        "show_text_box": true,
+        "desktop_content_position": "middle-center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "mobile_content_overlay_opacity": 40
+      }
+    },
+    "featured-booktok": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "BookTok Favorites 🔥",
+        "description": "What everyone's talking about",
+        "collection": "booktok-favorites",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true
+      }
+    },
+    "featured-monthly": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "This Month's Picks",
+        "description": "Curated by us, just for you",
+        "collection": "monthly-recommendations",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true
+      }
+    },
+    "featured-new": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New & Coming Soon",
+        "description": "Fresh arrivals and preorders",
+        "collection": "new-releases",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true
+      }
+    },
+    "featured-cozy": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Cozy One Day Reads ☕",
+        "description": "Perfect for a rainy afternoon",
+        "collection": "cozy-reads",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true
+      }
+    },
+    "pricing-banner": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "The More You Buy, The More You Save",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Under $100:</strong> Free Shipping &nbsp;|&nbsp; <strong>$100–$249:</strong> 10% Off &nbsp;|&nbsp; <strong>$250–$499:</strong> 15% Off &nbsp;|&nbsp; <strong>$500–$999:</strong> 20% Off &nbsp;|&nbsp; <strong>$1,000+:</strong> 25% Off</p>"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop All Books",
+            "button_link_1": "/collections/all",
+            "button_style_secondary_1": false
+          }
+        }
+      },
+      "block_order": ["heading", "text", "button"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "about-blurb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Curated for Real Readers",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Curated by a real reader, for real readers. Every book in our store is hand-selected because it deserves a place on your shelf.</p>"
+          }
+        }
+      },
+      "block_order": ["heading", "text"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "hero",
+    "featured-booktok",
+    "featured-monthly",
+    "featured-new",
+    "featured-cozy",
+    "pricing-banner",
+    "about-blurb"
+  ]
+}
