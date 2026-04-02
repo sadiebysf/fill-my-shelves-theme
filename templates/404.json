@@ -1,10 +1,65 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "main-404"
+      "type": "main-404",
+      "disabled": true,
+      "settings": {}
+    },
+    "177515314088b9cd56": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9cd1035_hPdMi3": {
+          "type": "ai_gen_block_9cd1035",
+          "settings": {
+            "title": "Featured collection",
+            "subtitle": "Discover our curated selection",
+            "title_size": 32,
+            "subtitle_size": 16,
+            "featured_product": "",
+            "button_text": "Shop now",
+            "list_product_1": "",
+            "list_product_2": "",
+            "list_product_3": "",
+            "list_product_4": "",
+            "grid_product_1": "",
+            "grid_product_2": "a-court-of-thorns-and-roses-a-court-of-thorns-and-roses-1",
+            "grid_product_3": "a-darker-shade-of-magic-a-novel-shades-of-magic-1",
+            "grid_product_4": "",
+            "desktop_width_percent": 100,
+            "section_padding": 40,
+            "background_color": "#faf7f2",
+            "text_color": "#2c1810",
+            "card_background": "#ffffff",
+            "border_color": "#e5e5e5",
+            "button_color": "#2c1810",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#7c9a7e"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9cd1035_hPdMi3"
+      ],
+      "settings": {}
+    },
+    "17751533874e14eb5c": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "177515314088b9cd56",
+    "17751533874e14eb5c"
   ]
 }
