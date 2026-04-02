@@ -42,7 +42,7 @@
       "settings": {
         "title": "BookTok Favorites 🔥",
         "description": "What everyone's talking about",
-        "collection": "booktok-favorites",
+        "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
@@ -59,7 +59,7 @@
       "settings": {
         "title": "This Month's Picks",
         "description": "Curated by us, just for you",
-        "collection": "monthly-recommendations",
+        "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-2",
@@ -76,7 +76,7 @@
       "settings": {
         "title": "New & Coming Soon",
         "description": "Fresh arrivals and preorders",
-        "collection": "new-releases",
+        "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
@@ -93,7 +93,7 @@
       "settings": {
         "title": "Cozy One Day Reads ☕",
         "description": "Perfect for a rainy afternoon",
-        "collection": "cozy-reads",
+        "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-2",
