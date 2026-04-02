@@ -1,12 +1,5 @@
 {
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "settings": {
-        "text": "📚 The more you buy, the more you save — up to 25% off bulk orders!",
-        "color_scheme": "scheme-5"
-      }
-    },
     "hero": {
       "type": "image-banner",
       "blocks": {
@@ -176,7 +169,6 @@
     }
   },
   "order": [
-    "announcement-bar",
     "hero",
     "featured-booktok",
     "featured-monthly",
