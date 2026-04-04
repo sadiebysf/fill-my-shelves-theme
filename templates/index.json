@@ -6,8 +6,8 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Fill Your Shelves",
-            "heading_size": "h0"
+            "heading": "Hoarding Books",
+            "heading_size": "h1"
           }
         },
         "subheading": {
@@ -19,90 +19,172 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop Now",
+            "button_label_1": "Shop All Books",
             "button_link_1": "/collections/all",
-            "button_style_secondary_1": false
+            "button_style_secondary_1": false,
+            "button_label_2": "Browse Collections",
+            "button_link_2": "/collections",
+            "button_style_secondary_2": true
           }
         }
       },
       "block_order": ["heading", "subheading", "button"],
       "settings": {
-        "image_overlay_opacity": 30,
-        "image_height": "large",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
         "adapt_height_first_image": false,
         "show_text_box": true,
-        "desktop_content_position": "middle-center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "mobile_content_overlay_opacity": 40
+        "desktop_content_position": "middle-left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-3",
+        "mobile_content_overlay_opacity": 50
       }
     },
-    "featured-booktok": {
-      "type": "featured-collection",
+    "collection-browse": {
+      "type": "collection-list",
+      "blocks": {
+        "romance": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "romance"
+          }
+        },
+        "fantasy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fantasy"
+          }
+        },
+        "mystery": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "mystery"
+          }
+        },
+        "classics": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "classics"
+          }
+        },
+        "ya": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "young-adult"
+          }
+        },
+        "biography": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "biography"
+          }
+        }
+      },
+      "block_order": ["romance", "fantasy", "mystery", "classics", "ya", "biography"],
       "settings": {
-        "title": "BookTok Favorites 🔥",
-        "description": "What everyone's talking about",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
+        "title": "Browse by Genre",
+        "image_ratio": "square",
+        "number_of_columns_desktop": 6,
+        "number_of_columns_mobile": 3,
+        "show_view_all": false,
         "color_scheme": "scheme-1",
-        "show_view_all": true,
-        "view_all_style": "link",
-        "enable_desktop_slider": true,
-        "full_width": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true
-      }
-    },
-    "featured-monthly": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "This Month's Picks",
-        "description": "Curated by us, just for you",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-2",
-        "show_view_all": true,
-        "view_all_style": "link",
-        "enable_desktop_slider": true,
-        "full_width": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true
+        "padding_top": 36,
+        "padding_bottom": 16
       }
     },
     "featured-new": {
       "type": "featured-collection",
       "settings": {
-        "title": "New & Coming Soon",
-        "description": "Fresh arrivals and preorders",
+        "title": "New & Notable",
+        "description": "",
         "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
+        "products_to_show": 6,
+        "columns_desktop": 6,
         "color_scheme": "scheme-1",
         "show_view_all": true,
         "view_all_style": "link",
-        "enable_desktop_slider": true,
+        "enable_desktop_slider": false,
         "full_width": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
-    "featured-cozy": {
+    "featured-romance": {
       "type": "featured-collection",
       "settings": {
-        "title": "Cozy One Day Reads ☕",
-        "description": "Perfect for a rainy afternoon",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
+        "title": "Romance",
+        "description": "",
+        "collection": "romance",
+        "products_to_show": 6,
+        "columns_desktop": 6,
         "color_scheme": "scheme-2",
         "show_view_all": true,
         "view_all_style": "link",
-        "enable_desktop_slider": true,
+        "enable_desktop_slider": false,
         "full_width": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "featured-fantasy": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Fantasy",
+        "description": "",
+        "collection": "fantasy",
+        "products_to_show": 6,
+        "columns_desktop": 6,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "featured-mystery": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Mystery & Thriller",
+        "description": "",
+        "collection": "mystery",
+        "products_to_show": 6,
+        "columns_desktop": 6,
+        "color_scheme": "scheme-2",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "featured-classics": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Classics",
+        "description": "",
+        "collection": "classics",
+        "products_to_show": 6,
+        "columns_desktop": 6,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "pricing-banner": {
@@ -118,7 +200,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Under $100:</strong> Free Shipping &nbsp;|&nbsp; <strong>$100–$249:</strong> 10% Off &nbsp;|&nbsp; <strong>$250–$499:</strong> 15% Off &nbsp;|&nbsp; <strong>$500–$999:</strong> 20% Off &nbsp;|&nbsp; <strong>$1,000+:</strong> 25% Off</p>"
+            "text": "<p><strong>$100–$249:</strong> 10% Off &nbsp;·&nbsp; <strong>$250–$499:</strong> 15% Off &nbsp;·&nbsp; <strong>$500–$999:</strong> 20% Off &nbsp;·&nbsp; <strong>$1,000+:</strong> 25% Off</p>"
           }
         },
         "button": {
@@ -134,47 +216,61 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-3",
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
-    "about-blurb": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Curated for Real Readers",
-            "heading_size": "h2"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Curated by a real reader, for real readers. Every book in our store is hand-selected because it deserves a place on your shelf.</p>"
-          }
-        }
-      },
-      "block_order": ["heading", "text"],
+    "featured-ya": {
+      "type": "featured-collection",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "title": "Young Adult",
+        "description": "",
+        "collection": "young-adult",
+        "products_to_show": 6,
+        "columns_desktop": 6,
         "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
         "full_width": false,
-        "padding_top": 60,
-        "padding_bottom": 60
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "featured-nonfiction": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Nonfiction",
+        "description": "",
+        "collection": "biography",
+        "products_to_show": 6,
+        "columns_desktop": 6,
+        "color_scheme": "scheme-2",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     }
   },
   "order": [
     "hero",
-    "featured-booktok",
-    "featured-monthly",
+    "collection-browse",
     "featured-new",
-    "featured-cozy",
+    "featured-romance",
+    "featured-fantasy",
+    "featured-mystery",
+    "featured-classics",
     "pricing-banner",
-    "about-blurb"
+    "featured-ya",
+    "featured-nonfiction"
   ]
 }
